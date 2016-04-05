@@ -1,0 +1,28 @@
+{
+  "name": "countries-and-capitols",
+  "description": "Unit 2.2.2",
+  "main": "index.js",
+  "authors": [
+    "rostasan <ross.dickman@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "countries-and-capitols"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "^1.4.8",
+    "angular-route": "^1.4.8",
+    "angular": "^1.4.8",
+    "angular-material": "^1.0.7"
+  }
+}

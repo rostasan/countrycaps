@@ -7,17 +7,17 @@
                 .when('/', {
                     templateUrl: 'views/home.html',
                     controller: 'HomeController',
-                    controlleras: 'vm'
+                    controllerAs: 'vm'
                 })
                 .when('/list', {
                     templateUrl: 'views/CountryList.html',
-                    controller: 'ListController',
-                    controlleras: 'vm'
+                    controller: 'CountryController',
+                    controllerAs: 'vm'
                 })
                 .when('/detail',{
                     templateUrl: 'views/CountryDetail.html',
                     controller: 'DetailController',
-                    controlleras: 'vm'
+                    controllerAs: 'vm'
                 })
                  
         }

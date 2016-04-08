@@ -7,26 +7,40 @@
 </head>
 <body ng-app="mainApp" ng-cloak>
 
-<div layout="column" class="zero">
-  <div flex="33" flex-md="{{ vm.box1Width }}" class="one"></div>
-    <div flex="33" layout="{{ vm.direction }}" layout-md="row" class="two">
-      <div flex="22" flex-md="10" hide-lg class="two_one"></div>
-      <div flex="30px" show hide-md="{{ vm.hideBox }}" flex-md="25" class="two_two"></div>
-      <div flex="20" flex-md="65" class="two_three"></div>
-    </div>
-  <div flex class="three">Countries and Capitols</div>
+<div class="flex-parent">
+
+<div layout="column" layout-align="center center">
+
+    <div flex><h1>Countries and Capitols</h1><hr></div>
+
+    <div layout="column" flex="30" layout-align="center center">
+    <div flex><p>This view is just responsible for displaying some
+        explanatory text about your app. It's perfectly fine to use
+        lorem filler, but if you're looking to create a more polished experience,
+        you might include an image, graphic, or other visual embellishment.</p></div>
 </div>
 
-    <div ng-view=""></div>
+</div>
+</div>
+
+
+
+
+
+
+<div ng-view></div>
 <script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-material/angular-material.js"></script>
-<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+
 <script src="bower_components/angular-aria/angular-aria.js"></script>
 <script src="components/app.js"></script>
 <script src="components/appRoute.js"></script>
 <script src="components/services/CountryCode.js"></script>
+<script src="components/ListController.js"></script>
+
 
 </body>
 </html>

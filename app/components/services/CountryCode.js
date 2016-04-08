@@ -2,17 +2,19 @@
     angular
         .module('mainApp')
         .factory('dataservice', dataservice);
-    dataservice.$inject = ['$http','logger'];
+    dataservice.$inject = ['$http'];
 
-    function dataservice($http, logger) {
+    function dataservice($http) {
         return {
             getCountries: getCountries
         };
         function getCountries() {
             return $http({
                 method : "GET",
-                url : 'api.geonames.org/search?',
-                username : 'rostasan',
+                url : 'http://api.geonames.org/searchJSON?',
+                params : {
+                    username : 'rostasan'
+                },
                 format: "json",
                 nojsoncallback: 1
             })
@@ -20,11 +22,11 @@
                 .catch(getCountriesFailed);
 
             function getCountriesComplete(response) {
-                return response.data.results;
+                return response.data.geonames;
             }
 
-            function getContriesFailed(error) {
-                logger.error('XHR Failed for getCountries.' + error.data);
+            function getCountriesFailed(error) {
+                console.error('XHR Failed for getCountries.' + error.data);
             }
 
         }

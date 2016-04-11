@@ -6,29 +6,14 @@
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
 </head>
 <body ng-app="mainApp" ng-cloak>
-
-<div class="flex-parent">
-
-<div layout="column" layout-align="center center">
-
-    <div flex><h1>Countries and Capitols</h1><hr></div>
-
-    <div layout="column" flex="30" layout-align="center center">
-    <div flex><p>This view is just responsible for displaying some
-        explanatory text about your app. It's perfectly fine to use
-        lorem filler, but if you're looking to create a more polished experience,
-        you might include an image, graphic, or other visual embellishment.</p></div>
-</div>
-
-</div>
-</div>
-
-
-
-
-
-
 <div ng-view></div>
+<div ng-controller="CountryController">
+    {{ geonames.countries }}
+
+
+</div>
+
+
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-messages/angular-messages.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
@@ -40,6 +25,8 @@
 <script src="components/appRoute.js"></script>
 <script src="components/services/CountryCode.js"></script>
 <script src="components/ListController.js"></script>
+<script src="components/HomeController.js"></script>
+<script src="components/services/CountryCode.js"></script>
 
 
 </body>

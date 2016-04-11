@@ -2,9 +2,10 @@
     angular
         .module('mainApp')
         .factory('dataservice', dataservice);
-    dataservice.$inject = ['$http'];
+    dataservice.$inject = ['$http','$q'];
 
-    function dataservice($http) {
+    function dataservice($http, $q) {
+
         return {
             getCountries: getCountries
         };

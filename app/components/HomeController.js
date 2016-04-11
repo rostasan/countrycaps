@@ -1,7 +1,7 @@
 (function () {
 
     angular
-        .Module('mainApp')
+        .module('mainApp')
         .controller('HomeController', function($scope){
             
         })

@@ -2,10 +2,11 @@
     angular
         .module('mainApp')
         .factory('dataservice', dataservice);
-    dataservice.$inject = ['$http','$q'];
+    dataservice.$inject = ['$http','$q','$scope'];
 
-    function dataservice($http, $q) {
+    function dataservice($http, $q, $scope) {
 
+        $scope.keyword = '';
         return {
             getCountries: getCountries
         };
@@ -14,7 +15,8 @@
                 method : "GET",
                 url : 'http://api.geonames.org/searchJSON?',
                 params : {
-                    username : 'rostasan'
+                    username : 'rostasan',
+                    q : $scope.keyword
                 },
                 format: "json",
                 nojsoncallback: 1

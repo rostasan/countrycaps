@@ -1,4 +1,24 @@
-{{ vm.countries }}
-<img id='myImage' src="http://www.geonames.org/img/country/250/{{ countryCode }}.png" />
-<img src="http://www.geonames.org/flags/x/{{ flagCode }}.gif" />
+<div>
+	<form ng-submit="q">
+		<input type="text" name="q" ng-model="keyword" required />
+		<input type="submit" value="Submit" id="submit" />
+	</form>
 
+	<div class="results" ng-if="vm.lenght > 0">
+		<h2>{{ vm.length }} search results were found for "{{ keyword }}".</h2>
+		<div class="row">
+			<div ng-repeat="c in vm.countries">
+				{{ c.countries }}
+				<img id='myImage' src="http://www.geonames.org/img/country/250/{{ c.countryCode }}.png" />
+				<img src="http://www.geonames.org/flags/x/{{ c.flagCode }}.gif" />
+			</div>
+			
+
+		</div>
+		
+	</div>
+
+
+
+
+</div>

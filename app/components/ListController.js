@@ -2,13 +2,15 @@
     angular
         .module('mainApp')
         .controller('CountryController', CountryController);
+        //  $scope.data = data['geonames'][0];
+          CountryController.$inject = ['dataservice', '$scope'];
+           $scope.data = {};
 
-    CountryController.$inject = ['dataservice'];
-
-    function CountryController(dataservice) {
+    function CountryController(dataservice, $scope) {
+      //  $scope.data = data['geonames'][0];
         var vm = this;
         vm.countries = [];
-        vm.countryCode = [];
+     //   vm.countryCode = [];
 
         activate();
 
@@ -17,9 +19,9 @@
                 .then(function(countries) {
                     vm.countries = countries
                 })
-                .then(function(countryCode) {
-                    vm.countryCode = countryCode
-                })
+             //   .then(function(countryCode) {
+            //        vm.countryCode = countryCode
+            //    })
         }
     }
 

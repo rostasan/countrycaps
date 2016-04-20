@@ -2,30 +2,38 @@
     angular
         .module('mainApp')
         .factory('dataservice', dataservice);
-    dataservice.$inject = ['$http','$q','$scope'];
+    dataservice.$inject = ['$http','$q'];
+
+
+
 
     function dataservice($http, $q, $scope) {
+      
+        // var urlString = [
+        //     "http://api.geonames.org/searchJSON?" +
+        //     "q=greece" +
+        //     "&username=demo"
 
-        $scope.keyword = '';
-        return {
+        // ];
+        var q = $q.defer
+        return  {
             getCountries: getCountries
-        };
+                };
         function getCountries() {
             return $http({
                 method : "GET",
-                url : 'http://api.geonames.org/searchJSON?',
-                params : {
-                    username : 'rostasan',
-                    q : $scope.keyword
-                },
-                format: "json",
-                nojsoncallback: 1
+                // url: urlString,
+                url:  "http://api.geonames.org/searchJSON?",
+                params: {
+                    username: 'rostasan',
+                        },
+                callback: 'JSON_CALLBACK'
             })
-                .then(getCountriesComplete)
-                .catch(getCountriesFailed);
+                q.then(getCountriesComplete)
+                q.catch(getCountriesFailed);
 
             function getCountriesComplete(response) {
-                return response.data.geonames;
+                return q.response.data.geonames;
             }
 
             function getCountriesFailed(error) {

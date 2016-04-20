@@ -1,6 +1,6 @@
 <div>
-	<form ng-submit="q">
-		<input type="text" name="q" ng-model="keyword" required />
+	<form ng-submit="getCountries()">
+		<input type="text" name="q" ng-model="keyword" ng-model-option="{ getterSetter: true }" required />
 		<input type="submit" value="Submit" id="submit" />
 	</form>
 
@@ -12,13 +12,13 @@
 				<img id='myImage' src="http://www.geonames.org/img/country/250/{{ c.countryCode }}.png" />
 				<img src="http://www.geonames.org/flags/x/{{ c.flagCode }}.gif" />
 			</div>
-			
+
 
 		</div>
-		
+
 	</div>
 
-
+{{ vm.countries }}
 
 
 </div>

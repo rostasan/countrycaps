@@ -1,6 +1,6 @@
 <div>
-	<form ng-submit="getCountries()">
-		<input type="text" name="q" ng-model="keyword" ng-model-option="{ getterSetter: true }" required />
+	<form ng-submit="getCountries(keyword)">
+		<input type="text" name="keyword" ng-model="keyword" ng-model-option="{  updateOn: submit }" required />
 		<input type="submit" value="Submit" id="submit" />
 	</form>
 
@@ -9,8 +9,8 @@
 		<div class="row">
 			<div ng-repeat="c in vm.countries">
 				{{ c.countries }}
-				<img id='myImage' src="http://www.geonames.org/img/country/250/{{ c.countryCode }}.png" />
-				<img src="http://www.geonames.org/flags/x/{{ c.flagCode }}.gif" />
+				<!--<img id='myImage' src="http://www.geonames.org/img/country/250/{{ c.countryCode }}.png" />-->
+				<!--<img src="http://www.geonames.org/flags/x/{{ c.flagCode }}.gif" />-->
 			</div>
 
 

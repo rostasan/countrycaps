@@ -2,44 +2,62 @@
     angular
         .module('mainApp')
         .factory('dataservice', dataservice);
-    dataservice.$inject = ['$http','$q'];
+    dataservice.$inject = ['$http','$q','$timeout', '$scope'];
+
+    function dataservice($http, $scope, $timeout, $q) {
+        function wait() {
+            return $q(function (resolve, reject) {
+                $timeout(function () {
+                    resolve();
+                }, 2000);
+
+
+            });
+        }
+        function notify() {
+            $scope.notifySaved = true;
+            return wait().then(function() {
+                $scope.notifySaved = false;
+            });
+        }
 
 
 
 
-    function dataservice($http, $q, $scope) {
-      
-        // var urlString = [
-        //     "http://api.geonames.org/searchJSON?" +
-        //     "q=greece" +
-        //     "&username=demo"
-
-        // ];
-        var q = $q.defer
-        return  {
-            getCountries: getCountries
-                };
-        function getCountries() {
+         $scope.getCountry = function(keyword) {
             return $http({
-                method : "GET",
-                // url: urlString,
-                url:  "http://api.geonames.org/searchJSON?",
+                method: "GET",
+                url: "http://api.geonames.org/countryInfo",
                 params: {
                     username: 'rostasan',
-                        },
-                callback: 'JSON_CALLBACK'
+                    country: keyword
+                  },
+                  callback: 'JSON_CALLBACK'
             })
-                q.then(getCountriesComplete)
-                q.catch(getCountriesFailed);
+      };
 
-            function getCountriesComplete(response) {
-                return q.response.data.geonames;
-            }
 
-            function getCountriesFailed(error) {
-                console.error('XHR Failed for getCountries.' + error.data);
-            }
 
-        }
+      //  $scope.keyword = ""
+//        var defer = $q.defer
+//        return  {
+//            getCountries: getCountries,
+//            getCountry: getCountry
+//                };
+//        function getCountries(query) {
+//            return $http({
+//                method : "GET",
+//
+//                url:  "http://api.geonames.org/searchJSON",
+//                params: {
+//                    username: 'rostasan',
+//
+//                        },
+//                callback: 'JSON_CALLBACK',
+//
+//            })
+//
+//
+//        }
     }
 })();

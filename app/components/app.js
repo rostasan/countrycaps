@@ -3,7 +3,7 @@
  */
 angular
     .module('mainApp',['ngRoute','ngAnimate', 'ngMessages', 'ngMaterial'])
-    
+
 //    // These are full file snippets conta<!-- inlining an IIFE
 //    ngapp     // creates an Angular module setter
 //    ngcontroller // creates an Angular controller

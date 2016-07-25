@@ -2,9 +2,9 @@
     angular
         .module('mainApp')
         .factory('dataservice', dataservice);
-    dataservice.$inject = ['$http','$q','$timeout', '$scope'];
+    dataservice.$inject = ['$http','$q','$timeout'];
 
-    function dataservice($http, $scope, $timeout, $q) {
+    function dataservice($http, $q, $timeout) {
         function wait() {
             return $q(function (resolve, reject) {
                 $timeout(function () {
@@ -24,17 +24,41 @@
 
 
 
-         $scope.getCountry = function(keyword) {
+        function getCountries() {
             return $http({
                 method: "GET",
-                url: "http://api.geonames.org/countryInfo",
+                url: "http://api.geonames.org/countryInfoJSON",
+                params: {
+                    username: 'rostasan'
+
+                },
+                callback: 'JSON_CALLBACK'
+            })
+        }
+        function getCountry(keyword) {
+            return $http({
+                method: "GET",
+                url: "http://api.geonames.org/countryInfoJSON",
                 params: {
                     username: 'rostasan',
-                    country: keyword
-                  },
-                  callback: 'JSON_CALLBACK'
+                    countryCode: keyword
+                },
+                callback: 'JSON_CALLBACK'
             })
-      };
+        }
+        return {
+            wait: wait,
+            notify: notify,
+            getCountries: getCountries,
+            getCountry: getCountry
+//            search: search,
+//            neighbours: neighbours
+        };
+
+// method to get all the countries
+
+// method to get a single country
+
 
 
 

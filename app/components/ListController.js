@@ -10,18 +10,18 @@
 
         var vm = this;
         vm.countries = [];
-        vm.getCountry = getCountry;
+        // vm.getCountry = getCountry;
 
         function init(){
-            $scope.countries = dataservice.getCountry();
+            $scope.countries = dataservice.getCountries();
        }
+
+
         init();
 
 
 
 
-
-        activate();
 
         function activate() {
             return dataservice.getCountries()
@@ -29,9 +29,9 @@
                     vm.countries = countries
                 })
 
-        }
+        }activate();
     }
-
+    
 
 
 })();

@@ -1,24 +1,74 @@
-<div>
-	<form ng-submit="getCountries(keyword)">
-		<input type="text" name="keyword" ng-model="keyword" ng-model-option="{  updateOn: submit }" required />
-		<input type="submit" value="Submit" id="submit" />
-	</form>
+<!--<div>-->
+	<!--<form ng-submit="getCountries()">-->
+		<!--<input type="text" name="keyword" ng-model="keyword" ng-model-option="{  updateOn: submit }" required />-->
+		<!--<input type="submit" value="Submit" id="submit" />-->
+	<!--</form>-->
 
-	<div class="results" ng-if="vm.lenght > 0">
-		<h2>{{ vm.length }} search results were found for "{{ keyword }}".</h2>
-		<div class="row">
-			<div ng-repeat="c in vm.countries">
-				{{ c.countries }}
-				<!--<img id='myImage' src="http://www.geonames.org/img/country/250/{{ c.countryCode }}.png" />-->
-				<!--<img src="http://www.geonames.org/flags/x/{{ c.flagCode }}.gif" />-->
-			</div>
-
-
-		</div>
-
-	</div>
-
-{{ vm.countries }}
+	<!--<div class="results">-->
+		<!--<h2>{{ vm.length }} search results were found for "{{ keyword }}".</h2>-->
+		<!--<div class="row">-->
+			<!--<div ng-repeat="c in vm.countries">-->
+				<!--{{ c.countries }}-->
+				<!--&lt;!&ndash;<img id='myImage' src="http://www.geonames.org/img/country/250/{{ c.countryCode }}.png" />&ndash;&gt;-->
+				<!--&lt;!&ndash;<img src="http://www.geonames.org/flags/x/{{ c.flagCode }}.gif" />&ndash;&gt;-->
 
 
-</div>
+		<!--</div>-->
+
+	<!--</div>-->
+
+
+
+<!--<div>-->
+    <!--<md-button ng-click="CountryController()">Get a list of all countries</md-button>-->
+
+
+<!--</div>-->
+<!--</div>-->
+    {{vm.countries}}
+    <!--<div>-->
+        <!--<form ng-submit="getCountry(keyword)">-->
+            <!--<input type="text" name="keyword" ng-model="keyword" ng-model-option="{  updateOn: submit }" required />-->
+            <!--<input type="submit" value="Submit" id="submit" />-->
+        <!--</form>-->
+
+        <!--<div class="results" ng-if="vm.lenght > 0">-->
+            <!--<h2>{{ vm.length }} search results were found for "{{ keyword }}".</h2>-->
+            <!--<div class="row">-->
+                <!--<div ng-repeat="c in vm.countries">-->
+                    <!--{{ c.countries }}-->
+                    <!--&lt;!&ndash;<img id='myImage' src="http://www.geonames.org/img/country/250/{{ c.countryCode }}.png" />&ndash;&gt;-->
+                    <!--&lt;!&ndash;<img src="http://www.geonames.org/flags/x/{{ c.flagCode }}.gif" />&ndash;&gt;-->
+
+
+                <!--</div>-->
+
+            <!--</div>-->
+
+            <!--{{ vm.countries }}-->
+
+
+        <!--</div>-->
+        <!--<div>-->
+            <!--<form ng-submit="getCountry(keyword)">-->
+                <!--<input type="text" name="keyword" ng-model="keyword" ng-model-option="{  updateOn: submit }" required />-->
+                <!--<input type="submit" value="Submit" id="submit" />-->
+            <!--</form>-->
+
+            <!--<div class="results" ng-if="vm.lenght > 0">-->
+                <!--<h2>{{ vm.length }} search results were found for "{{ keyword }}".</h2>-->
+                <!--<div class="row">-->
+                    <!--<div ng-repeat="c in vm.countries">-->
+                        <!--{{ c.countries }}-->
+                        <!--&lt;!&ndash;<img id='myImage' src="http://www.geonames.org/img/country/250/{{ c.countryCode }}.png" />&ndash;&gt;-->
+                        <!--&lt;!&ndash;<img src="http://www.geonames.org/flags/x/{{ c.flagCode }}.gif" />&ndash;&gt;-->
+
+
+                    <!--</div>-->
+
+                <!--</div>-->
+
+                <!--{{ vm.countries }}-->
+
+
+            <!--</div>-->

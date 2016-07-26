@@ -12,7 +12,7 @@
                 .when('/list', {
                     templateUrl: 'views/CountryList.html',
                     controller: 'CountryController',
-                    controllerAs: 'vm'
+                    controllerAs: 'countries as vm'
                 })
                 .when('/detail',{
                     templateUrl: 'views/CountryDetail.html',

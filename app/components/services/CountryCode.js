@@ -29,7 +29,8 @@
                 method: "GET",
                 url: "http://api.geonames.org/countryInfoJSON",
                 params: {
-                    username: 'rostasan'
+                    username: 'rostasan',
+                    maxRows: 10
 
                 },
                 callback: 'JSON_CALLBACK'
@@ -38,10 +39,11 @@
         function getCountry(keyword) {
             return $http({
                 method: "GET",
-                url: "http://api.geonames.org/countryInfoJSON",
+                url: "http://api.geonames.org/searchJSON",
                 params: {
-                    username: 'rostasan',
-                    countryCode: keyword
+                    username: '',
+                    q: "london",
+                    maxRows: 10
                 },
                 callback: 'JSON_CALLBACK'
             })

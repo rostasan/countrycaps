@@ -11,7 +11,8 @@
         var vm = this;
         vm.countries = [];
 
-//
+//  This was the cause of my duplicate display of data in the XHR log. I'm not sure why I had it, maybe was the beggining
+//   of the activate function.
 //        function init(){
 //            $scope.countries = dataservice.getCountries();
 //
